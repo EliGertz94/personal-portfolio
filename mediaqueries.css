@@ -16,6 +16,9 @@
     font-family: "Poppins", sans-serif;
   }
 }
+.rounded-image {
+  border-radius: 50%;
+}
 
 @media screen and (max-width: 600px) {
   #contact,
@@ -61,16 +64,20 @@
     height: 46vw;
     justify-content: center;
   }
+
   .section__text__p2 {
     font-size: 1.25rem;
   }
-  .title {
-    font-size: 2rem;
-  }
+
   .text-container {
     text-align: justify;
     font-size: 0.5rem;
   }
+}
+.title {
+  font-size: 2rem;
+  /* padding: 25px; */
+  padding-bottom: 35px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -103,6 +110,7 @@
     height: 275px;
     margin: 0 auto 2rem;
   }
+
   .about-containers {
     margin-top: 0;
   }
