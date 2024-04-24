@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <div id="portfolio">
+    <div id="snake-game">
+      <h1>Earn 5 points to access my portfolio !</h1>
+      <h1>Current Score: <span id="scoreDisplay"></span></h1>
+
+      <canvas id="board"></canvas>
+    </div>
+
+    <div id="portfolio" style="display: none">
       <nav id="desktop-nav">
         <div class="logo">Eli Gertzman</div>
         <div>
@@ -384,7 +391,7 @@
         <p>Copyright &#169; 2024 Eli Gertzman. All Rights Reserved.</p>
       </footer>
       <script src="script.js"></script>
+      <script src="snake.js"></script>
     </div>
-    <div id="snake-game"></div>
   </body>
 </html>
