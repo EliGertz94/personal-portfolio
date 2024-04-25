@@ -1,3 +1,9 @@
+.title {
+  font-size: 2rem;
+  /* padding: 25px; */
+  padding-bottom: 35px;
+}
+
 @media screen and (max-width: 4000px) {
   #profile {
     height: 83vh;
@@ -73,11 +79,6 @@
     text-align: justify;
     font-size: 0.5rem;
   }
-}
-.title {
-  font-size: 2rem;
-  /* padding: 25px; */
-  padding-bottom: 35px;
 }
 
 @media screen and (max-width: 1200px) {

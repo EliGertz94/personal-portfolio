@@ -31,7 +31,7 @@ window.onload = function () {
   placeFood();
   document.addEventListener("keyup", changeDirection);
   // update();
-  setInterval(update, 1000 / 10); //100 milliseconds
+  setInterval(update, 1000 / 7); //100 milliseconds
 };
 
 function update() {
@@ -83,7 +83,9 @@ function update() {
   ) {
     gameOver = true;
     if (!isOverFivePoints()) {
-      alert("Game Over");
+      if (confirm("Game Over")) {
+        restartGame();
+      }
     }
   }
 
@@ -91,7 +93,7 @@ function update() {
     if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
       gameOver = true;
       if (!isOverFivePoints()) {
-        alert("Game Over");
+        confirm("Game Over");
       }
     }
   }
@@ -124,4 +126,7 @@ function placeFood() {
   //(0-1) * cols -> (0-19.9999) -> (0-19) * 25
   foodX = Math.floor(Math.random() * cols) * blockSize;
   foodY = Math.floor(Math.random() * rows) * blockSize;
+}
+function restartGame() {
+  window.location.reload();
 }
