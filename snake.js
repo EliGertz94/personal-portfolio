@@ -1,7 +1,7 @@
 //board
-var blockSize = 20;
-var rows = 15;
-var cols = 15;
+var blockSize = 40;
+var rows = 8;
+var cols = 8;
 var board;
 var context;
 
@@ -19,7 +19,7 @@ var snakeBody = [];
 //food
 var foodX;
 var foodY;
-
+var updateImage = true;
 var gameOver = false;
 
 window.onload = function () {
@@ -49,7 +49,7 @@ window.onload = function () {
   rightButton.addEventListener("click", function () {
     setDirection(1, 0);
   });
-  setInterval(update, 1000 / 7);
+  setInterval(update, 1000 / 4);
 
   function update() {
     if (gameOver) {
@@ -59,8 +59,12 @@ window.onload = function () {
     context.fillStyle = "black";
     context.fillRect(0, 0, board.width, board.height);
 
-    context.fillStyle = "red";
+    //context.fillStyle = "red";
     context.fillRect(foodX, foodY, blockSize, blockSize);
+
+    var img = new Image();
+    img.src = "/assets/mongoDB.png";
+    context.drawImage(img, foodX, foodY, blockSize, blockSize);
 
     if (snakeX == foodX && snakeY == foodY) {
       snakeBody.push([foodX, foodY]);
@@ -118,17 +122,13 @@ window.onload = function () {
 
   function changeDirection(e) {
     if (e.code == "ArrowUp" && velocityY != 1) {
-      velocityX = 0;
-      velocityY = -1;
+      setDirection(0, -1);
     } else if (e.code == "ArrowDown" && velocityY != -1) {
-      velocityX = 0;
-      velocityY = 1;
+      setDirection(0, 1);
     } else if (e.code == "ArrowLeft" && velocityX != 1) {
-      velocityX = -1;
-      velocityY = 0;
+      setDirection(-1, 0);
     } else if (e.code == "ArrowRight" && velocityX != -1) {
-      velocityX = 1;
-      velocityY = 0;
+      setDirection(1, 0);
     }
   }
 
