@@ -11,14 +11,19 @@
     <div id="snake-game" class="snake-game">
       <h1>Earn 5 points to access my portfolio !</h1>
       <h1>Current Score: <span id="scoreDisplay"></span></h1>
-      <button class="btn2 btn-color-2" onclick="restartGame()">Restart</button>
-
-      <canvas id="board"></canvas>
-      <button class="btn2 btn-color-2" id="upButton">^</button>
       <div class="movment-buttons">
-        <button class="btn2 btn-color-2" id="leftButton"><</button
-        ><button class="btn2 btn-color-2" id="downButton">V</button
-        ><button class="btn2 btn-color-2" id="rightButton">></button>
+        <button class="btn2 btn-color-2" onclick="restartGame()">
+          Restart
+        </button>
+      </div>
+      <canvas id="board" class="movment-buttons"></canvas>
+      <div class="movment-buttons" id="desktop-buttons">
+        <button class="btn2 btn-color-2" id="upButton">^</button>
+        <div class="movment-buttons">
+          <button class="btn2 btn-color-2" id="leftButton"><</button
+          ><button class="btn2 btn-color-2" id="downButton">V</button
+          ><button class="btn2 btn-color-2" id="rightButton">></button>
+        </div>
       </div>
     </div>
 

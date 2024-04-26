@@ -19,8 +19,17 @@ var snakeBody = [];
 //food
 var foodX;
 var foodY;
-var updateImage = true;
+
 var gameOver = false;
+
+const images = [
+  "docker.png",
+  "java.png",
+  "react.png",
+  "typescript.png",
+  "mongoDB.png",
+];
+let imageIndex = 0;
 
 window.onload = function () {
   board = document.getElementById("board");
@@ -63,13 +72,14 @@ window.onload = function () {
     context.fillRect(foodX, foodY, blockSize, blockSize);
 
     var img = new Image();
-    img.src = "/assets/mongoDB.png";
+    img.src = "/assets/" + images[imageIndex];
     context.drawImage(img, foodX, foodY, blockSize, blockSize);
 
     if (snakeX == foodX && snakeY == foodY) {
       snakeBody.push([foodX, foodY]);
       placeFood();
       points++;
+      imageIndex++;
       document.getElementById("scoreDisplay").textContent = points;
       if (isOverFivePoints()) {
         let game = document.getElementById("snake-game");
