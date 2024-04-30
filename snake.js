@@ -32,10 +32,16 @@ const images = [
 let imageIndex = 0;
 
 window.onload = function () {
+  var mobileWidth = 480;
+  var desktopWidth = 1024;
+
+  var screenWidth = window.innerWidth;
+  if (screenWidth > mobileWidth) {
+  }
   board = document.getElementById("board");
   board.height = rows * blockSize;
   board.width = cols * blockSize;
-  context = board.getContext("2d"); //used for drawing on the board
+  context = board.getContext("2d");
 
   placeFood();
   document.addEventListener("keyup", changeDirection);
