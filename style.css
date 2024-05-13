@@ -448,6 +448,12 @@ footer p {
   font-size: 1.5rem;
 }
 
+.snake-game h1 {
+  display: inline-block; /* Display elements in one line */
+  margin: 0; /* Remove any default margin */
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
 .movment-buttons {
   align-items: center;
   justify-content: center;

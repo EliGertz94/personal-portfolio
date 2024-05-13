@@ -52,21 +52,25 @@ window.onload = function () {
   var leftButton = document.getElementById("leftButton");
   var rightButton = document.getElementById("rightButton");
 
-  upButton.addEventListener("click", function () {
+  upButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default behavior
     setDirection(0, -1);
   });
-  downButton.addEventListener("click", function () {
+  downButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default behavior
     setDirection(0, 1);
   });
-  leftButton.addEventListener("click", function () {
+  leftButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default behavior
     setDirection(-1, 0);
   });
-  rightButton.addEventListener("click", function () {
+  rightButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default behavior
     setDirection(1, 0);
   });
-  setInterval(update, 1000 / 4);
+  setInterval(update, 1000 / 2.5);
 
-  function update() {
+  function update(event) {
     if (gameOver) {
       return;
     }
@@ -114,14 +118,14 @@ window.onload = function () {
     //game over conditions
     if (
       snakeX < 0 ||
-      snakeX > cols * blockSize ||
+      snakeX >= cols * blockSize ||
       snakeY < 0 ||
-      snakeY > rows * blockSize
+      snakeY >= rows * blockSize
     ) {
       gameOver = true;
       if (!isOverFivePoints()) {
         if (confirm("Game Over")) {
-          restartGame();
+          restartGame(event);
         }
       }
     }
@@ -166,6 +170,7 @@ window.onload = function () {
     velocityY = y;
   }
 };
-function restartGame() {
+function restartGame(event) {
+  event.preventDefault();
   window.location.reload();
 }
