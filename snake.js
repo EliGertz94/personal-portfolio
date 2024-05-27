@@ -68,7 +68,7 @@ window.onload = function () {
     event.preventDefault(); // Prevent default behavior
     setDirection(1, 0);
   });
-  setInterval(update, 1000 / 2.5);
+  setInterval(update, 1000 / 3.8);
 
   function update(event) {
     if (gameOver) {
